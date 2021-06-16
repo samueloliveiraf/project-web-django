@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://libriry-django.herokuapp.com/']
 
-
 # Application definition
 
 INSTALLED_APPS = [
