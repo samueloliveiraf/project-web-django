@@ -1,0 +1,37 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/register-style.css' %}"> 
+
+    <title>Página de Cadastros</title>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <form method="POST" class="form-register">{% csrf_token %}
+
+            <input type="hidden" name="next" value="{{ next }}">
+            
+            {{ form|crispy }}
+
+            <button type="submit"> Cadastrar </button>
+
+        </form>
+        
+    </div>
+
+</body>
+
+</html>

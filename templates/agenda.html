@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "model-header.html" %}
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+
+            <ul class="ul-container">
+
+                <h3>Agendamentos</h3>
+
+                {% for evento in eventos %}
+
+                <li>{{ evento.titulo }} - {{ evento.data_evento }}  <a href="evento/delete/{{ evento.id }}/"> Excluir<i class="fas fa-trash"></i></a> </li> 
+
+                {% endfor %}
+                <button type="button"> <a href="evento/">Novo evento</a></button>
+            </ul>
+          
+        </div>
+
+    </main>
+
+
+</body>
+
+{% include "model-footer.html" %}
+
+</html>

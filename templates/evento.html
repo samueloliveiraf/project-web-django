@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Página Cadastro Eventos</title>
+</head>
+
+<body>
+
+    <div class="container-evento">
+
+        <form action="submit" method="POST" class="form-evento">{% csrf_token %}
+
+            <h3 class="h3-evento">Cadastrar Eventos</h3>
+        
+            <input type="text" name="titulo" placeholder="Titulo">
+    
+            <input type="datetime-local" name="data_evento">
+    
+            <textarea name="descricao" rows="5" cols="24"></textarea>>
+    
+            <button type="submit">Salvar</button>
+
+            <a href="/">Cancelar </a> 
+          
+        </form>
+
+    </div>
+
+</body>
+
+</html>
