@@ -11,8 +11,6 @@
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <!-- <script src="https://kit.fontawesome.com/b687d41eed.js" crossorigin="anonymous"></script> -->
-
     <title>Página para entrar</title>
 </head>
 
@@ -21,7 +19,6 @@
     <div class="container">
         
         <form action="submit" method="POST" class="form">{% csrf_token %}
-
 
             <input type="text" name="username" placeholder="usuário">
             <input type="password" name="password" placeholder="senha">
