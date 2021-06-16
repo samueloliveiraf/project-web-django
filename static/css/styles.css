@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    margin-top: 200px;
+    margin-top: 140px;
     text-align: center;
     justify-content: center;
     align-items: flex-start;
@@ -25,7 +25,6 @@ body {
     display: inline-grid;
     box-shadow: 0px 0px 11px 0px #e8e8e8;
     border-radius: 20px;
-    width: 280px;
 }
 
 .form input {
