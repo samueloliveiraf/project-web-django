@@ -2,3 +2,6 @@
 *db.sqlite3
 /.vscode
 /.mypy_cache
+.idea
+*pyc
+.env
