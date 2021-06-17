@@ -4,7 +4,7 @@ Para rodar o projeto
 
 1 - >git clone https://github.com/Samuelxd42/project-web-django.git
 
-# É necessário instalar um ambiente virtual dentro do Projeto ( venv )
+# É necessário instalar um ambiente virtual dentro do Projeto (venv)
 
 2 -> python -m venv venv
 
@@ -22,7 +22,7 @@ caso não tenha o PIP instalado usar o sequinte comando
 
 -> apt-get install python-pip
 
-Sequida só rodar o projeto com 
+Em sequida só rodar o projeto com 
 
 # python manage.py runserver
 
