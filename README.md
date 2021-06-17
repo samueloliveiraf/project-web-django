@@ -8,7 +8,7 @@ Para rodar o projeto
 
 2 -> python -m venv venv
 
-Como também é necessário ativar esse abiente virtual
+Como também é necessário ativar esse ambiente virtual
 
 -> sourch venv/bin/activate PARA O LINUX
 
