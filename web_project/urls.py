@@ -13,12 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+
 from web_project.settings import TEMPLATES
 from django.contrib import admin
 from django.urls import path, include
 from core import views
 from django.views.generic import RedirectView
+from core.api import viewset as coreviewsets
+
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+from rest_framework import routers
+
+routers = routers.DefaultRouter()
+
+routers.register(r'listar', coreviewsets.EventoViewsSet, basename='eventos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,9 +35,13 @@ urlpatterns = [
     path('agenda/evento/', views.evento),
     path('agenda/evento/submit', views.submit_evento),
     path('agenda/evento/delete/<int:id_evento>/', views.delete_evento),
+    path('agenda/lista/<int:id_usuario>', views.json_lista_evento),
     path('', RedirectView.as_view(url='/agenda/')),
+    path('login/registrar', views.SignUp.as_view(), name="signup"),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
-    path('', include('accounts.urls'))
+    path('api/', include(routers.urls)),
+    path('token/', TokenObtainPairView.as_view()),
+    path('token/refresh/', TokenRefreshView.as_view()),
 ]

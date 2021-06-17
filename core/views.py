@@ -1,8 +1,13 @@
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from core.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 
 
 def login_user(request):
@@ -61,3 +66,17 @@ def delete_evento(request, id_evento):
     if usuario == evento.usuario:
         evento.delete()
     return redirect('/')
+
+
+def json_lista_evento(request, id_usuario):
+    usuario = User.objects.get(id=id_usuario)
+
+    evento = Evento.objects.filter(usuario=usuario).values(
+        'id', 'usuario', 'titulo', 'data_criacao')
+    return JsonResponse(list(evento), safe=False)
+
+
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy(login_user)
+    template_name = 'cadastrar.html'
