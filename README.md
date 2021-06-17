@@ -16,7 +16,7 @@ Como também é necessário ativar esse abiente virtual
 
 3 -> Em seguida baixar as depencias do Projeto em 
 
--> pip install -r requirements.txt.
+-> pip install -r requirements-dev.txt.
 
 caso não tenha o PIP instalado usar o sequinte comando
 
