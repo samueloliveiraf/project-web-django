@@ -66,10 +66,14 @@ h3 {
     text-transform: uppercase;
 }
 
+li {
+    margin-bottom: 10px;
+}
+
 li a {
     text-decoration: none;
     color: #282639;
-    padding: 10px;
+    padding: 13px;
 }
 
 li a i {

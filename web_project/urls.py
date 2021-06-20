@@ -21,6 +21,9 @@ from core import views
 from django.views.generic import RedirectView
 from core.api import viewset as coreviewsets
 
+
+from rest_framework.routers import DefaultRouter
+
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from rest_framework import routers
@@ -28,6 +31,9 @@ from rest_framework import routers
 routers = routers.DefaultRouter()
 
 routers.register(r'listar', coreviewsets.EventoViewsSet, basename='eventos')
+
+
+# routers.register(r'users', coreviewsets.UserViewSet, basename='user')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
